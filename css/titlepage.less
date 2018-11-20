@@ -15,24 +15,24 @@ Styles applied for the title page only
      */
     .tpl-triangle-top, .tpl-triangle-bottom {
         border-style: none;
-        background: white;
         height: 20vh;
         width: 100%;
         display: initial;
+        position: relative;
     }
 
     .tpl-triangle-bottom {
         fill: @pane-color-background;
+        border-bottom: 1px solid @pane-color-background;
+        bottom: -1px;
     }
 
     .tpl-triangle-top {
         fill: @pane-color-foreground;
         shape-outside: polygon(0 0, 0 25%, 100% 100%, 100% 0); /* Magic which corresponds with the real height of triangle */
         float: right;
-    }
-
-    .inner-container {
-        margin: -1px 0 -1px 0; /* Fix bad CSS rendering */
+        border-top: 1px solid @pane-color-foreground;
+        top: -1px;
     }
 
     header {
