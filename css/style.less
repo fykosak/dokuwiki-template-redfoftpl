@@ -85,6 +85,11 @@ header {
 article {
     padding: 1cm 5%;
     background: white;
+
+    .inner-container {
+        margin: 0 auto;
+        max-width: 1440px;
+    }
 }
 
 @media (min-width: 992px) { /* Bootstrap */
@@ -129,9 +134,11 @@ article {
         }
 
         nav.navbar {
-            float: right;
+            >div {
+                position: absolute;
+                right: 5rem;
+            }
             height: 11rem;
-            padding-right: 5rem;
             font-size: 1.3rem;
             background: none;
 

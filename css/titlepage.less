@@ -2,6 +2,13 @@
 Styles applied for the title page only
 */
 
+// Height of the white part of the polygon on the screen
+@visible-polygon-half-height: 23vh;
+
+// Real height of the polygon inside the svg because of the shape-outside
+// Need to correspond with the html file
+@html-triangle-real-height-ratio: 0.75;
+
 .title-page {
     /**
      * Red triangles
@@ -67,7 +74,7 @@ Styles applied for the title page only
         }
 
         @media (min-width: 992px) {
-            height: 80vh;
+            height: 100vh- @visible-polygon-half-height;
 
             .header-inner {
                 position: absolute;
@@ -93,6 +100,12 @@ Styles applied for the title page only
                     margin: 2rem auto;
                 }
             }
+        }
+    }
+
+    @media (min-width: 992px) {
+        .tpl-triangle-top, .tpl-triangle-bottom {
+            height: @visible-polygon-half-height*2/@html-triangle-real-height-ratio;
         }
     }
 }
