@@ -71,23 +71,24 @@ $main_menu->addTools(null, true);
 
     </header>
 
-    <svg class="tpl-triangle-top" preserveAspectRatio="none" viewBox="0 0 100 100">
-        <polygon points="0,0 0,-10 110,-10 110,75 100,75"></polygon>
-    </svg>
+    <div class="inner-container">
+
+        <svg class="tpl-triangle-top" preserveAspectRatio="none" viewBox="0 0 100 100">
+            <polygon points="0,0 0,-10 110,-10 110,75 100,75"></polygon>
+        </svg>
 
 
-    <article>
-        <div class="inner-container">
+        <article>
             <?php html_msgarea() ?>
             <?php tpl_content(false); ?>
-        </div>
-    </article>
+        </article>
 
+        
+        <svg class="tpl-triangle-bottom" preserveAspectRatio="none" viewBox="0 0 100 100">
+            <polygon points="-10,110 100,110 100,100 0,25 -10,25"></polygon>
+        </svg>
 
-    <svg class="tpl-triangle-bottom" preserveAspectRatio="none" viewBox="0 0 100 100">
-        <polygon points="-10,110 100,110 100,100 0,25 -10,25"></polygon>
-    </svg>
-
+    </div>
 
     <footer>
         <?php tpl_include_page($footer_source); ?>
