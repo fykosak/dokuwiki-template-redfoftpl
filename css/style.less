@@ -1,0 +1,190 @@
+@pane-color-background: #f44336;
+@pane-color-text: #ff4e41;
+@pane-color-foreground: #d7392e;
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: @pane-color-background;
+}
+
+a:hover {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+header, footer {
+    color: white;
+}
+
+header {
+    position: relative;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    .header-background {
+        z-index: -1;
+        position: absolute;
+        bottom: 0;
+    }
+
+    object.header-background {
+        width: 120%;
+        right: 0;
+        transform: translateY(8%); /* comes from the graphic designer */
+    }
+
+    svg.header-background {
+        width: 100%;
+        height: 90%;
+        left: 0;
+        text {
+            fill: @pane-color-text;
+            font-weight: 700;
+        }
+    }
+
+    .title-pane {
+        /* because of fixing background in mobile devices */
+        position: relative;
+
+        h1 {
+            padding: 2rem;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+
+    .navbar-toggler {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 2rem;
+        border-color: rgba(255,255,255,0.8);
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
+    }
+
+    nav.navbar {
+        padding: 0;
+        background: @pane-color-foreground;
+
+        .nav-item {
+            padding: 0.3rem 1.5rem !important;
+            border-radius: .3em;
+            display: block;
+        }
+    }
+}
+
+article {
+    padding: 1cm 5%;
+    background: white;
+}
+
+@media (min-width: 992px) { /* Bootstrap */
+    header {
+        height: 11rem;
+
+        .header-background {
+            z-index: -1;
+            position: absolute;
+            bottom: 0;
+        }
+
+        object.header-background {
+            width: 80%;
+            right: 0;
+            transform: translateY(8%); /* comes from the graphic designer */
+        }
+
+         svg.header-background {
+            width: 100%;
+            height: 90%;
+            left: 0;
+            text {
+                fill: @pane-color-text;
+                font-weight: 700;
+            }
+        }
+
+        .navbar-toggler {
+            display: none;
+        }
+
+        .title-pane {
+            position: initial;
+
+            h1 {
+                line-height: 11rem;
+                padding: 0 0 0 6rem;
+                float: left;
+            }
+        }
+
+        nav.navbar {
+            float: right;
+            height: 11rem;
+            padding-right: 5rem;
+            font-size: 1.3rem;
+            background: none;
+
+            .nav-item {
+                padding: 1rem 1.5rem !important;
+                border-radius: .3em;
+            }
+
+            .nav-important {
+                background: white;
+                color: @pane-color-background;
+            }
+        }
+    }
+
+    article {
+        padding: 1cm 2cm;
+        background: white;
+    }
+}
+
+.tpl-triangle-bottom, .tpl-triangle-top {
+    display: none;
+}
+
+header a, footer a {
+    color: white;
+}
+
+
+
+footer {
+    padding: 1cm;
+}
+
+/**
+ * Remove DW's link images
+ */
+.dokuwiki a.urlextern, .dokuwiki a.windows, .dokuwiki a.mail, .dokuwiki a.mediafile, .dokuwiki a.interwiki {
+    padding: 0;
+    background-image: none;
+}
+
+/**
+ * Fix dropdown
+ */
+nav .tools a, nav .lang a {
+    .dropdown-item;
+}
+
+/**
+ * Fix idk weird behaviour
+ */
+#mediamanager__page, .ui-admin {
+    display: table;
+    width: 100%;
+}

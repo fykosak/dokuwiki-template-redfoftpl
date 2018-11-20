@@ -1,0 +1,98 @@
+/**
+Styles applied for the title page only
+*/
+
+.title-page {
+    /**
+     * Red triangles
+     */
+    .tpl-triangle-top, .tpl-triangle-bottom {
+        border-style: none;
+        background: white;
+        height: 20vh;
+        width: 100%;
+        display: initial;
+    }
+
+    .tpl-triangle-bottom {
+        fill: @pane-color-background;
+    }
+
+    .tpl-triangle-top {
+        fill: @pane-color-foreground;
+        shape-outside: polygon(0 0, 0 25%, 100% 100%, 100% 0); /* Magic which corresponds with the real height of triangle */
+        float: right;
+    }
+
+    header {
+
+        object {
+            height: auto;
+            width: 150% !important; /* comes from the graphic designer, need to overwrite non title-page bahaviour */
+            transform: translateY(15%) !important; /* comes from the graphic designer */
+        }
+
+        svg.header-background {
+            width: 100%;
+            height: auto;
+        }
+
+        .header-inner {
+            text-align: center;
+            background: @pane-color-foreground;
+
+            padding-top: 2rem;
+
+            .tpl-countdown {
+                margin: 0 5%;
+                .time {
+                    font-size: 10vw;
+                    font-weight: bold;
+                    line-height: 1em;
+                }
+                .note {
+                    font-size: 3vw;
+                }
+            }
+
+            .btn {
+                margin: 2rem auto .5rem auto;
+                background: white;
+                color: @pane-color-background;
+                border: none;
+                padding: .5em 2em;
+                font-weight: bold;
+                font-size: 5vw;
+            }
+        }
+
+        @media (min-width: 992px) {
+            height: 80vh;
+
+            .header-inner {
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+                background: none;
+
+                .tpl-countdown {
+                    position: relative;
+                    margin: 0 auto 10vh auto;
+                    max-width: 66rem;
+                    text-align: center;
+                    .time {
+                        font-size: 8rem;
+                    }
+                    .note {
+                        font-size: 2.5rem;
+                    }
+                }
+
+                .btn {
+                    font-size: 2rem;
+                    margin: 2rem auto;
+                }
+            }
+        }
+    }
+}

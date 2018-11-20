@@ -1,0 +1,7 @@
+base     redfoftpl
+author   Štěpán Stenchlák
+email    stenchlak@fykos.cz
+date     2018-10-01
+name     Fyziklani template
+desc     The template for the Fyziklani competition organised by FYKOS
+url      https://www.dokuwiki.org/template:starter
