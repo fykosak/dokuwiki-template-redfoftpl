@@ -83,7 +83,8 @@ $main_menu->addTools(null, true);
 
 
     <svg class="tpl-triangle-bottom" preserveAspectRatio="none" viewBox="0 0 100 100">
-        <polygon points="0,100 100,100 0,25"></polygon>
+        <!-- <polygon points="0,100 100,100 0,25"></polygon> -->
+        <polygon points="0,150 100,150 100,100 0,25"></polygon>
     </svg>
 
 
