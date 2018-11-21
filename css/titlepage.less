@@ -3,11 +3,18 @@ Styles applied for the title page only
 */
 
 // Height of the white part of the polygon on the screen
-@visible-polygon-half-height: 23vh;
+@lg-half-triangle-height: 23vh;
 
-// Real height of the polygon inside the svg because of the shape-outside
+// Height of the triangle on small screens
+@sm-full-triangle-height: 20vh;
+
+// Real height of the polygon inside the svg
 // Need to correspond with the html file
-@html-triangle-real-height-ratio: 0.75;
+@svg-triangle-height: 0.5;
+
+// Because of https://stackoverflow.com/questions/43180480/inline-svg-border-bug
+// The polygon is not a triangle, but a triangle with a rectangle with this height
+@svg-rectangle-height: 0.25;
 
 .title-page {
     /**
@@ -15,7 +22,7 @@ Styles applied for the title page only
      */
     .tpl-triangle-top, .tpl-triangle-bottom {
         border-style: none;
-        height: 20vh;
+        height: @sm-full-triangle-height/@svg-triangle-height;
         width: 100%;
         display: initial;
         position: relative;
@@ -23,16 +30,18 @@ Styles applied for the title page only
 
     .tpl-triangle-bottom {
         fill: @pane-color-background;
-        border-bottom: 1px solid @pane-color-background;
-        bottom: -1px;
+        margin-bottom: -@sm-full-triangle-height/@svg-triangle-height*@svg-rectangle-height;
     }
 
     .tpl-triangle-top {
         fill: @pane-color-foreground;
-        shape-outside: polygon(0 0, 0 25%, 100% 100%, 100% 0); /* Magic which corresponds with the real height of triangle */
+        shape-outside: polygon(0 0, 0 100%*(1 - @svg-rectangle-height - @svg-triangle-height)/(1 - @svg-rectangle-height), 100% 100%, 100% 0); /* Magic which corresponds with the real height of triangle */
+        margin-top: -@sm-full-triangle-height/@svg-triangle-height*@svg-rectangle-height;
         float: right;
-        border-top: 1px solid @pane-color-foreground;
-        top: -1px;
+    }
+
+    .inner-container {
+        overflow: hidden;
     }
 
     header {
@@ -78,7 +87,7 @@ Styles applied for the title page only
         }
 
         @media (min-width: 992px) {
-            height: 100vh- @visible-polygon-half-height;
+            height: 100vh- @lg-half-triangle-height;
 
             .header-inner {
                 position: absolute;
@@ -109,7 +118,15 @@ Styles applied for the title page only
 
     @media (min-width: 992px) {
         .tpl-triangle-top, .tpl-triangle-bottom {
-            height: @visible-polygon-half-height*2/@html-triangle-real-height-ratio;
+            height: @lg-half-triangle-height*2/@svg-triangle-height;
+        }
+
+        .tpl-triangle-top {
+            margin-top: -@lg-half-triangle-height*2/@svg-triangle-height*@svg-rectangle-height;
+        }
+
+        .tpl-triangle-bottom {
+            margin-bottom: -@lg-half-triangle-height*2/@svg-triangle-height*@svg-rectangle-height;
         }
     }
 }

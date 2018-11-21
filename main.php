@@ -74,7 +74,7 @@ $main_menu->addTools(null, true);
     <div class="inner-container">
 
         <svg class="tpl-triangle-top" preserveAspectRatio="none" viewBox="0 0 100 100">
-            <polygon points="0,0 0,-10 110,-10 110,75 100,75"></polygon>
+            <polygon points="0,0 0,25 100,75 100,0"></polygon>
         </svg>
 
 
@@ -83,9 +83,9 @@ $main_menu->addTools(null, true);
             <?php tpl_content(false); ?>
         </article>
 
-        
+
         <svg class="tpl-triangle-bottom" preserveAspectRatio="none" viewBox="0 0 100 100">
-            <polygon points="-10,110 100,110 100,100 0,25 -10,25"></polygon>
+            <polygon points="0,25 100,75 100,100 0,100"></polygon>
         </svg>
 
     </div>
