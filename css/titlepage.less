@@ -1,5 +1,6 @@
 /**
 Styles applied for the title page only
+There is a problem with SVG https://stackoverflow.com/questions/43180480/inline-svg-border-bug
 */
 
 // Height of the white part of the polygon on the screen
@@ -40,6 +41,7 @@ Styles applied for the title page only
         float: right;
     }
 
+    /* SVG problem fix (z-indices) */
     header {
         z-index: 3;
         overflow: hidden;
