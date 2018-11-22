@@ -10,11 +10,11 @@ Styles applied for the title page only
 
 // Real height of the polygon inside the svg
 // Need to correspond with the html file
-@svg-triangle-height: 0.5;
+@svg-triangle-height: 0.73;
 
 // Because of https://stackoverflow.com/questions/43180480/inline-svg-border-bug
 // The polygon is not a triangle, but a triangle with a rectangle with this height
-@svg-rectangle-height: 0.25;
+@svg-rectangle-height: 0.02;
 
 .title-page {
     /**
@@ -40,8 +40,27 @@ Styles applied for the title page only
         float: right;
     }
 
-    .inner-container {
+    header {
+        z-index: 3;
         overflow: hidden;
+        background: @pane-color-background;
+    }
+
+    .tpl-triangle-top {
+        z-index: 2;
+    }
+
+    .inner-container {
+        z-index: 1;
+    }
+
+    .tpl-triangle-bottom {
+        z-index: 2;
+    }
+
+    footer {
+        z-index: 3;
+        position: relative;
     }
 
     header {
