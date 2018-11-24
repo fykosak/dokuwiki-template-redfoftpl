@@ -36,7 +36,7 @@ $main_menu->addTools(null, true);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#d7392e">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,500,600,700" rel="stylesheet">
     <title><?php tpl_pagetitle() /* don't forget to enable useheading */ ?> - <?= strip_tags($conf['title']) ?></title>
     <?php tpl_metaheaders() ?>
     <?= tpl_favicon(array('favicon', 'mobile')) ?>
@@ -47,13 +47,11 @@ $main_menu->addTools(null, true);
 <div id="dokuwiki__top" class="site <?php echo tpl_classes(); ?>">
     <header>
         <div class="title-pane">
-            <svg class="header-background" preserveAspectRatio="<?= $title_page ? "none" : "xMinYMin meet" ?>"
-                 viewBox="0 0 59 15">
+            <svg class="header-background" preserveAspectRatio="<?= $title_page ? "none" : "xMinYMin meet" ?>" viewBox="0 0 59 15">
                 <text y="15"><?= $background_text ?></text>
             </svg>
-            <object class="header-background" type="image/svg+xml"
-                    data="<?= tpl_basedir() . 'images/prague.svg' ?>"></object>
-            <h1><?php tpl_link(wl(), $conf['title']) ?></h1>
+            <object class="header-background" type="image/svg+xml" data="<?= tpl_basedir() . 'images/prague.svg' ?>"></object>
+            <a href="<?= wl() ?>" class="svg header-logo"><object class="" type="image/svg+xml" data="<?= tpl_basedir() . 'images/logo.svg' ?>"></object></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#mainNavbar<?= $main_menu->id ?>" aria-controls="main-navbar" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -97,8 +95,6 @@ $main_menu->addTools(null, true);
     <?php tpl_indexerWebBug(); ?>
 </div>
 
-
-<div class="coverer"></div>
 <?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

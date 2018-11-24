@@ -1,0 +1,54 @@
+/**
+ * Styles for blocks on the title page.
+ */
+.title-page {
+    counter-reset: blockcounter;
+
+    .secedit {
+        display: none;
+    }
+
+    article {
+        font-size: 1em;
+
+        h2 {
+            color: @pane-color-background;
+            font-size: 4.5em;
+            font-weight: 700;
+
+            &:before {
+                content: "0" counter(blockcounter) " ";
+                counter-increment: blockcounter;
+                font-size: .5em;
+            }
+        }
+
+        h2:nth-of-type(even) {
+            text-align: right;
+        }
+
+        @media (min-width: 992px) {
+            font-size: 1.7em;
+
+            h2 {
+                font-size: 4.5em;
+                margin-top: 2em;
+
+                ~ h2 {
+                    margin-top: -1em;
+                }
+            }
+
+            h2, h2 + .level2 {
+                margin-left: 0;
+                margin-right: 55%;
+            }
+
+            h2:nth-of-type(even), h2:nth-of-type(even) + .level2 {
+                text-align: initial;
+                margin-left: 55%;
+                margin-right: 0;
+            }
+        }
+    }
+}

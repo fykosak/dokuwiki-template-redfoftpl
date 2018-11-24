@@ -47,15 +47,24 @@ header {
         }
     }
 
+    /* Competition logo */
+    .header-logo {
+        height: 7em;
+        padding-left: 2em;
+        width: 20em;
+        max-width: 65%;
+        display: block;
+        position: relative;
+
+        object {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
     .title-pane {
         /* because of fixing background in mobile devices */
         position: relative;
-
-        h1 {
-            padding: 2rem;
-            font-size: 2rem;
-            font-weight: bold;
-        }
     }
 
     .navbar-toggler {
@@ -86,10 +95,21 @@ header {
     background: white;
 
     article {
-        padding: 1cm 5%;
+        padding: 2.5cm 5%;
         margin: 0 auto;
-        max-width: 1440px;
+        max-width: 1200px;
         box-sizing: content-box;
+        font-size: 1.2rem;
+
+        h1 {
+            margin-bottom: 2.5rem;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        h2, h3, h4, h5 {
+            font-weight: 600;
+        }
     }
 }
 
@@ -117,6 +137,14 @@ header {
                 fill: @pane-color-text;
                 font-weight: 700;
             }
+        }
+
+        /* Competition logo */
+        .header-logo {
+            height: 11em;
+            width: 22em;
+            padding-left: 5em;
+            float: left;
         }
 
         .navbar-toggler {
@@ -157,7 +185,6 @@ header {
 
     article {
         padding: 1cm 2cm;
-        background: white;
     }
 }
 
@@ -173,6 +200,11 @@ header a, footer a {
 
 footer {
     padding: 1cm;
+    text-align: center;
+
+    img {
+        width: 10vw;
+    }
 }
 
 /**
@@ -199,4 +231,14 @@ nav .tools a, nav .lang a {
 }
 .media {
     display: inline;
+}
+
+
+a.svg:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }

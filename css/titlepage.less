@@ -54,6 +54,11 @@ There is a problem with SVG https://stackoverflow.com/questions/43180480/inline-
 
     .inner-container {
         z-index: 1;
+
+        article {
+            z-index: 3;
+            position: relative;
+        }
     }
 
     .tpl-triangle-bottom {
@@ -67,10 +72,10 @@ There is a problem with SVG https://stackoverflow.com/questions/43180480/inline-
 
     header {
 
-        object {
+        object.header-background {
             height: auto;
-            width: 150% !important; /* comes from the graphic designer, need to overwrite non title-page bahaviour */
-            transform: translateY(15%) !important; /* comes from the graphic designer */
+            width: 132% !important; /* comes from the graphic designer, need to overwrite non title-page bahaviour */
+            transform: translateY(13%) !important; /* comes from the graphic designer */
         }
 
         svg.header-background {
@@ -118,8 +123,8 @@ There is a problem with SVG https://stackoverflow.com/questions/43180480/inline-
 
                 .tpl-countdown {
                     position: relative;
-                    margin: 0 auto 10vh auto;
-                    max-width: 66rem;
+                    margin: 0 auto 1em auto;
+                    max-width: 76rem;
                     text-align: center;
                     .time {
                         font-size: 8rem;
