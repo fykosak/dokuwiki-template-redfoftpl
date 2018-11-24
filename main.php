@@ -91,8 +91,6 @@ $main_menu->addTools(null, true);
     <footer>
         <?php tpl_include_page($footer_source); ?>
     </footer>
-
-    <?php tpl_indexerWebBug(); ?>
 </div>
 
 <?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?>

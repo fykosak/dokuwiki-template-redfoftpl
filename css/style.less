@@ -80,7 +80,7 @@ header {
     }
 
     nav.navbar {
-        padding: 0;
+        padding: 0 0 1em 0;
         background: @pane-color-foreground;
 
         .nav-item {
@@ -170,6 +170,7 @@ header {
             height: 11rem;
             font-size: 1.3rem;
             background: none;
+            padding: 0;
 
             .nav-item {
                 padding: 1rem 1.5rem !important;
@@ -199,11 +200,12 @@ header a, footer a {
 
 
 footer {
-    padding: 1cm;
+    padding: 1em 1em 0 1em;
     text-align: center;
 
     img {
-        width: 10vw;
+        .img-fluid;
+        width: 15em;
     }
 }
 
