@@ -11,7 +11,7 @@ There is a problem with SVG https://stackoverflow.com/questions/43180480/inline-
 
 // Real height of the polygon inside the svg
 // Need to correspond with the html file
-@svg-triangle-height: 0.73;
+@svg-triangle-height: 0.98;
 
 // Because of https://stackoverflow.com/questions/43180480/inline-svg-border-bug
 // The polygon is not a triangle, but a triangle with a rectangle with this height
@@ -36,9 +36,7 @@ There is a problem with SVG https://stackoverflow.com/questions/43180480/inline-
 
     .tpl-triangle-top {
         fill: @pane-color-foreground;
-        shape-outside: polygon(0 0, 0 100%*(1 - @svg-rectangle-height - @svg-triangle-height)/(1 - @svg-rectangle-height), 100% 100%, 100% 0); /* Magic which corresponds with the real height of triangle */
         margin-top: -@sm-full-triangle-height/@svg-triangle-height*@svg-rectangle-height;
-        float: right;
     }
 
     /* SVG problem fix (z-indices) */
@@ -58,6 +56,7 @@ There is a problem with SVG https://stackoverflow.com/questions/43180480/inline-
         article {
             z-index: 3;
             position: relative;
+            padding: 0 5%;
         }
     }
 
