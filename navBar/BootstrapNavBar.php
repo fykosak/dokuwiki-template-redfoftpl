@@ -228,6 +228,29 @@ class BootstrapNavBar {
     }
 
     /**
+     * Simple version of previous function
+     * @return $this
+     */
+    public function addLangToggle($class = '') {
+        global $conf;
+        $data = [];
+        if (count($conf['available_lang']) == 0) return $this;
+
+        foreach ($conf['available_lang'] as $currentLang) {
+            $data[] = new NavBarItem([
+                'id' => null,
+                'level' => 1,
+                'content' => '<a href="' . $currentLang['content']['url'] . '" class="nav-item nav-link">' . $currentLang['content']['text'] . '</a>'
+            ]);
+        }
+        $this->data[] = [
+            'class' => 'nav ' . $class,
+            'data' => $data,
+        ];
+        return $this;
+    }
+
+    /**
      * @return NavBarItem[]
      */
     private function getUserTools() {

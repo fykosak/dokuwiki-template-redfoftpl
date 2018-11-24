@@ -24,7 +24,7 @@ use fksTemplate\NavBar\BootstrapNavBar;
 
 $main_menu = new BootstrapNavBar('full');
 $main_menu->setClassName('navbar navbar-expand-lg')->addMenuText($menu_source)
-    ->addLangSelect();
+    ->addLangToggle();
 $main_menu->addTools(null, true);
 
 ?><!doctype html>
