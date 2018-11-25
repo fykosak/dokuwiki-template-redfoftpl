@@ -1,0 +1,37 @@
+/**
+ * Stylesheet for cards about organizers
+ */
+
+.organizer {
+    padding: 1em 0;
+
+    h3 {
+        color: @pane-color-background;
+        font-size: 2em;
+        font-weight: 700;
+    }
+
+    /* Profile photo */
+    &>p>img {
+        .img-fluid;
+        border-radius: 100%;
+        box-shadow: 0 0 .5em gray;
+        width: 12em;
+        margin: auto;
+        float: none;
+        display: block;
+    }
+
+    /* For big devices */
+    @media (min-width: @mobile-width) {
+        h3 {
+            padding-top: .8em;
+        }
+
+        /* Profile photo */
+        &>p>img {
+            margin: 0 4em 0 0;
+            float: left;
+        }
+    }
+}
