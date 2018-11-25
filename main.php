@@ -48,7 +48,7 @@ $main_menu->addTools(null, true);
     <header>
         <div class="title-pane">
             <svg class="header-background" preserveAspectRatio="<?= $title_page ? "none" : "xMinYMin meet" ?>" viewBox="0 0 59 15">
-                <text y="15"><?= $background_text ?></text>
+                <text <?= $title_page ? 'x="-1.2" ' : null ?>y="15"><?= $background_text ?></text>
             </svg>
             <object class="header-background" type="image/svg+xml" data="<?= tpl_basedir() . 'images/prague.svg' ?>"></object>
             <a href="<?= wl() ?>" class="svg header-logo"><object class="" type="image/svg+xml" data="<?= tpl_basedir() . 'images/logo.svg' ?>"></object></a>

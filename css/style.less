@@ -2,6 +2,9 @@
 @pane-color-text: #ff4e41;
 @pane-color-foreground: #d7392e;
 
+@mobile-width: 992px;
+@tablet-width: 1200px;
+
 body {
     font-family: 'Source Sans Pro', sans-serif;
     background: @pane-color-background;
@@ -80,13 +83,20 @@ header {
     }
 
     nav.navbar {
-        padding: 0 0 1em 0;
+        padding: 0;
         background: @pane-color-foreground;
 
         .nav-item {
             padding: 0.3rem 1.5rem !important;
             border-radius: .3em;
             display: block;
+        }
+
+        @media (max-width: @mobile-width) {
+            /* Make mobile menu higher */
+            & > div > div:last-child {
+                padding-bottom: 1em;
+            }
         }
     }
 }
@@ -95,7 +105,7 @@ header {
     background: white;
 
     article {
-        padding: 2.5cm 5%;
+        padding: 2em 5%;
         margin: 0 auto;
         max-width: 1200px;
         box-sizing: content-box;
@@ -113,7 +123,7 @@ header {
     }
 }
 
-@media (min-width: 992px) { /* Bootstrap */
+@media (min-width: @mobile-width) { /* Bootstrap */
     header {
         height: 11rem;
 
@@ -173,7 +183,7 @@ header {
             padding: 0;
 
             .nav-item {
-                padding: 1rem 1.5rem !important;
+                padding: 1rem .5rem !important;
                 border-radius: .3em;
             }
 
@@ -184,8 +194,16 @@ header {
         }
     }
 
-    article {
-        padding: 1cm 2cm;
+    .inner-container {
+        article {
+            padding: 5em 5%;
+        }
+    }
+}
+
+@media (min-width: @tablet-width) {
+    header nav.navbar .nav-item {
+        padding: 1rem 1.5rem !important;
     }
 }
 
@@ -205,7 +223,8 @@ footer {
 
     img {
         .img-fluid;
-        width: 15em;
+        max-width: 15em;
+        width: 40%;
     }
 }
 
