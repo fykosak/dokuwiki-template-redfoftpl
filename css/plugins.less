@@ -5,10 +5,16 @@ div.gallery {
 
     .gallery_page {
         min-width: 100%;
+        &>div{
+            margin-bottom: 30px !important; /* Comes from the Bootstrap */
+        }
     }
 
     .gallery-image {
-        height: 270px; /* corresponds with max content width, 3 columns and 16:9 image ratio */
+        height: 14.5em; /* corresponds with max content width, 3 columns and 16:9 image ratio */
+        @media (min-width: @mobile-width) {
+            height: 8.5em;
+        }
     }
 }
 

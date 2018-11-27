@@ -2,8 +2,8 @@
 @pane-color-text: #ff4e41;
 @pane-color-foreground: #d7392e;
 
-@mobile-width: 992px;
-@tablet-width: 1200px;
+@mobile-width: 992px; /* Bootstrap lg */
+@tablet-width: 1420px;
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
@@ -107,7 +107,6 @@ header {
     article {
         padding: 2em 5%;
         margin: 0 auto;
-        max-width: 1200px;
         box-sizing: content-box;
         font-size: 1.2rem;
 
@@ -121,6 +120,10 @@ header {
             font-weight: 600;
         }
     }
+}
+
+.mode_show .inner-container article {
+    max-width: 45em;
 }
 
 @media (min-width: @mobile-width) { /* Bootstrap */
@@ -152,8 +155,8 @@ header {
         /* Competition logo */
         .header-logo {
             height: 11em;
-            width: 22em;
-            padding-left: 5em;
+            width: 18em;
+            padding-left: 3em;
             float: left;
         }
 
@@ -175,7 +178,7 @@ header {
         nav.navbar {
             >div {
                 position: absolute;
-                right: 5rem;
+                right: 3rem;
             }
             height: 11rem;
             font-size: 1.3rem;
@@ -202,8 +205,23 @@ header {
 }
 
 @media (min-width: @tablet-width) {
-    header nav.navbar .nav-item {
-        padding: 1rem 1.5rem !important;
+    header {
+        nav.navbar {
+            .nav-item {
+                padding: 1rem 1.5rem !important;
+            }
+
+            > div {
+                position: absolute;
+                right: 3rem;
+            }
+        }
+
+        /* Competition logo */
+        .header-logo {
+            width: 22em;
+            padding-left: 5em;
+        }
     }
 }
 
@@ -218,7 +236,7 @@ header a, footer a {
 
 
 footer {
-    padding: 1em 1em 0 1em;
+    padding: 2em 1em 0 1em;
     text-align: center;
 
     img {
