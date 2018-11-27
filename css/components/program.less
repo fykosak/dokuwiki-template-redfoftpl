@@ -1,0 +1,53 @@
+/**
+ * Styles for the program section
+ */
+
+.program {
+    h2 {
+        color: @pane-color-background;
+        font-size: 2em;
+        font-weight: 700;
+    }
+
+    .event {
+        padding: 1em;
+
+        .time {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .name {
+            font-weight: bold;
+        }
+        
+        .description {
+            font-style: italic;
+        }
+
+        .parallel > :not(.name) {
+            padding-left: 1em;
+        }
+    }
+
+    .event.event-info {
+        color: gray;
+    }
+
+    @media (min-width: 768px) { /* Bootstrap */
+        .event {
+            .time {
+                text-decoration: none;
+            }
+            .parallel > :not(.name) {
+                padding: 0;
+            }
+        }
+
+        .event + .event {
+            border-top: 1px solid @pane-color-background;
+        }
+    }
+}
