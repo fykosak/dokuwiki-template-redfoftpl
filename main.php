@@ -94,6 +94,10 @@ $main_menu->addTools(null, true);
 </div>
 
 <?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?>
+<script type="text/javascript">
+    _ga.create('<?= tpl_getConf('ga_trackcode') ?>', '<?= $_SERVER['HTTP_HOST'] ?>');
+    _gaq.push(['_trackPageview']);
+</script>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
