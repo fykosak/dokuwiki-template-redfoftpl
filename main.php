@@ -38,8 +38,18 @@ $main_menu->addTools(null, true);
     <meta name="theme-color" content="#d7392e">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,500,600,700" rel="stylesheet">
     <title><?php tpl_pagetitle() /* don't forget to enable useheading */ ?> - <?= strip_tags($conf['title']) ?></title>
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= tpl_basedir() . 'images/favicon' ?>/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= tpl_basedir() . 'images/favicon' ?>/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= tpl_basedir() . 'images/favicon' ?>/favicon-16x16.png">
+    <link rel="manifest" href="<?= tpl_basedir() . 'images/favicon' ?>/site.webmanifest">
+    <link rel="mask-icon" href="<?= tpl_basedir() . 'images/favicon' ?>/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="apple-mobile-web-app-title" content="<?= strip_tags($conf['title']) ?>">
+    <meta name="application-name" content="<?= strip_tags($conf['title']) ?>">
+    <meta name="msapplication-TileColor" content="#d7392e">
+
     <?php tpl_metaheaders() ?>
-    <?= tpl_favicon(array('favicon', 'mobile')) ?>
     <?php tpl_includeFile('meta.html') ?>
 </head>
 
