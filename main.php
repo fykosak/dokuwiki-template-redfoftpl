@@ -73,7 +73,7 @@ $main_menu->addTools(null, true);
 
         <?php if ($title_page): ?>
             <div class="header-inner">
-                <?php tpl_include_page($header_source); ?>
+                <?php tpl_include_page($header_source, true, false, false); ?>
             </div>
         <?php endif; ?>
 
@@ -99,7 +99,7 @@ $main_menu->addTools(null, true);
     </div>
 
     <footer>
-        <?php tpl_include_page($footer_source); ?>
+        <?php tpl_include_page($footer_source, true, false, false); ?>
     </footer>
 </div>
 
