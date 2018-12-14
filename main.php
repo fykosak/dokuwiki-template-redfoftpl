@@ -15,6 +15,9 @@ $footer_source = $data['footer-source'] ?: tpl_getConf('footer-source') . '_' . 
 // header-source: is a page which will be displayed on the top of the title page
 $header_source = isset($data['header-source']) ? $data['header-source'] : tpl_getConf('header-source');
 
+// title, don't forget to enable useheading
+$title = isset($data['title']) ? hsc($data['title']) : tpl_pagetitle(null, true) . " - " . strip_tags($conf['title']);
+
 require_once(dirname(__FILE__) . '/tpl_functions.php'); /* include hook for template functions */
 
 require_once('navBar/NavBarItem.php');
@@ -37,7 +40,7 @@ $main_menu->addTools(null, true);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#d7392e">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,500,600,700" rel="stylesheet">
-    <title><?php tpl_pagetitle() /* don't forget to enable useheading */ ?> - <?= strip_tags($conf['title']) ?></title>
+    <title><?= $title ?></title>
 
 
     <link rel="apple-touch-icon" sizes="180x180" href="<?= tpl_basedir() . 'images/favicon' ?>/apple-touch-icon.png">
