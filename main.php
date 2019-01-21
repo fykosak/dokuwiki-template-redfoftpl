@@ -18,6 +18,9 @@ $header_source = isset($data['header-source']) ? $data['header-source'] : tpl_ge
 // title, don't forget to enable useheading
 $title = isset($data['title']) ? hsc($data['title']) : tpl_pagetitle(null, true) . " - " . strip_tags($conf['title']);
 
+// request for full width
+$full_width = isset($data['full-width']) ? (bool)$data['full-width'] : false;
+
 require_once(dirname(__FILE__) . '/tpl_functions.php'); /* include hook for template functions */
 
 require_once('navBar/NavBarItem.php');
@@ -57,7 +60,7 @@ $main_menu->addTools(null, true);
 </head>
 
 <body class="<?= $title_page ? "title-page" : null ?>">
-<div id="dokuwiki__top" class="site <?php echo tpl_classes(); ?>">
+<div id="dokuwiki__top" class="site <?php echo tpl_classes(); ?><?= $full_width ? ' full-width' : null ?>">
     <header>
         <div class="title-pane">
             <svg class="header-background" preserveAspectRatio="<?= $title_page ? "none" : "xMinYMin meet" ?>" viewBox="0 0 59 15">

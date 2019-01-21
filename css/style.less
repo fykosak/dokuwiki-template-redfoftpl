@@ -130,6 +130,10 @@ header {
     max-width: 45em;
 }
 
+.full-width .inner-container article {
+    max-width: initial;
+}
+
 @media (min-width: @mobile-width) { /* Bootstrap */
     header {
         height: 11rem;
@@ -206,6 +210,12 @@ header {
             padding: 5em 5%;
         }
     }
+
+    footer {
+        img {
+            padding: 1em 3em;
+        }
+    }
 }
 
 @media (min-width: @tablet-width) {
@@ -227,6 +237,12 @@ header {
             padding-left: 5em;
         }
     }
+
+    footer {
+        img {
+            padding: 1em 2em;
+        }
+    }
 }
 
 .tpl-triangle-bottom, .tpl-triangle-top {
@@ -245,8 +261,9 @@ footer {
 
     img {
         .img-fluid;
-        max-width: 15em;
+        max-width: 21em;
         width: 40%;
+        padding: 1em 1em;
     }
 }
 
@@ -284,4 +301,26 @@ a.svg:after {
     right: 0;
     bottom: 0;
     left: 0;
+}
+
+a {
+    color: @pane-color-background;
+}
+
+.btn-color {
+    .btn-primary;
+    background-color: @pane-color-text;
+    border-color: @pane-color-background;
+}
+
+.btn-color:hover {
+    background-color: @pane-color-background;
+    border-color: @pane-color-foreground;
+    color: white;
+}
+
+.btn-color:focus {
+    background-color: @pane-color-foreground;
+    border-color: @pane-color-background;
+    box-shadow: 0 0 0 0.2rem fade(@pane-color-text, 25%);
 }
