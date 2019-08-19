@@ -67,7 +67,7 @@ $main_menu->addTools(null, true);
                 <text <?= $title_page ? 'x="-1.2" ' : null ?>y="15"><?= $background_text ?></text>
             </svg>
             <object class="header-background" type="image/svg+xml" data="<?= tpl_basedir() . 'images/prague.svg' ?>"></object>
-            <a href="<?= wl($conf['titlepage']) /* comes from the translatemapping plugin */ ?>" class="svg header-logo"><object class="" type="image/svg+xml" data="<?= tpl_basedir() . 'images/logo.svg' ?>"></object></a>
+            <a href="<?= wl($conf['titlepage']) /* comes from the translatemapping plugin */ ?>" class="svg header-logo"><object class="" type="image/svg+xml" data="<?= tpl_basedir() . 'images/logo-2020.svg' ?>"></object></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#mainNavbar<?= $main_menu->id ?>" aria-controls="main-navbar" aria-expanded="false"
                     aria-label="Toggle navigation">
