@@ -6,7 +6,7 @@
 @tablet-width: 1420px;
 
 body {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Inter', sans-serif; /* Source Sans Pro */
     background: @pane-color-background;
 }
 
@@ -136,7 +136,7 @@ header {
 
 @media (min-width: @mobile-width) { /* Bootstrap */
     header {
-        height: 11rem;
+        /*height: 11rem;*/
 
         .header-background {
             z-index: -1;
@@ -325,4 +325,15 @@ a {
     background-color: @pane-color-foreground;
     border-color: @pane-color-background;
     box-shadow: 0 0 0 0.2rem fade(@pane-color-text, 25%);
+}
+
+/**
+ * Fix unreachable buttons
+ */
+.title-page header .header-inner {
+	pointer-events: none;
+
+	a, btn, iframe {
+		pointer-events: initial;
+	}
 }

@@ -15,12 +15,6 @@
             color: @pane-color-background;
             font-size: 4.5em;
             font-weight: 700;
-
-            &:before {
-                content: "0" counter(blockcounter) " ";
-                counter-increment: blockcounter;
-                font-size: .5em;
-            }
         }
 
         @media (min-width: @mobile-width) {
@@ -28,7 +22,7 @@
 
             h2 {
                 font-size: 4.5em;
-                margin-top: -1em;
+                /*margin-top: -1em;*/
             }
 
             h2, h2 + .level2 {

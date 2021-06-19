@@ -42,7 +42,9 @@ $main_menu->addTools(null, true);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#d7392e">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,500,600,700" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,500,600,700" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
     <title><?= $title ?></title>
 
 
@@ -54,9 +56,22 @@ $main_menu->addTools(null, true);
     <meta name="apple-mobile-web-app-title" content="<?= strip_tags($conf['title']) ?>">
     <meta name="application-name" content="<?= strip_tags($conf['title']) ?>">
     <meta name="msapplication-TileColor" content="#d7392e">
+<script type="text/javascript">
+    _ga.create('<?= tpl_getConf('ga_trackcode') ?>', '<?= $_SERVER['HTTP_HOST'] ?>');
+    _gaq.push(['_trackPageview']);
+</script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
     <?php tpl_metaheaders() ?>
     <?php tpl_includeFile('meta.html') ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script defer="defer" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
 </head>
 
 <body class="<?= $title_page ? "title-page" : null ?>">
@@ -67,7 +82,7 @@ $main_menu->addTools(null, true);
                 <text <?= $title_page ? 'x="-1.2" ' : null ?>y="15"><?= $background_text ?></text>
             </svg>
             <object class="header-background" type="image/svg+xml" data="<?= tpl_basedir() . 'images/prague.svg' ?>"></object>
-            <a href="<?= wl($conf['titlepage']) /* comes from the translatemapping plugin */ ?>" class="svg header-logo"><object class="" type="image/svg+xml" data="<?= tpl_basedir() . 'images/logo-2020.svg' ?>"></object></a>
+            <a href="<?= wl($conf['titlepage']) /* comes from the translatemapping plugin */ ?>" class="svg header-logo"><object class="" type="image/svg+xml" data="<?= tpl_basedir() . 'images/logo-2022.svg' ?>"></object></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#mainNavbar<?= $main_menu->id ?>" aria-controls="main-navbar" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -87,10 +102,10 @@ $main_menu->addTools(null, true);
 
     <div class="inner-container">
 
-        <svg class="tpl-triangle-top" preserveAspectRatio="none" viewBox="0 0 100 100">
+<!--        <svg class="tpl-triangle-top" preserveAspectRatio="none" viewBox="0 0 100 100">
             <polygon points="0,0 0,2 100,100 100,0"></polygon>
         </svg>
-
+-->
 
         <article>
             <?php html_msgarea() ?>
@@ -108,19 +123,6 @@ $main_menu->addTools(null, true);
         <?php tpl_include_page($footer_source, true, false, false); ?>
     </footer>
 </div>
-
 <?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?>
-<script type="text/javascript">
-    _ga.create('<?= tpl_getConf('ga_trackcode') ?>', '<?= $_SERVER['HTTP_HOST'] ?>');
-    _gaq.push(['_trackPageview']);
-</script>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
 </body>
 </html>

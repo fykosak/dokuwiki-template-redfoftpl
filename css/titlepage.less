@@ -42,7 +42,7 @@ There is a problem with SVG https://stackoverflow.com/questions/43180480/inline-
     /* SVG problem fix (z-indices) */
     header {
         z-index: 3;
-        overflow: hidden;
+        /*overflow: hidden;*/
         background: @pane-color-background;
     }
 
@@ -70,11 +70,12 @@ There is a problem with SVG https://stackoverflow.com/questions/43180480/inline-
     }
 
     header {
+        overflow: hidden;
 
         object.header-background {
             height: auto;
             width: 132% !important; /* comes from the graphic designer, need to overwrite non title-page bahaviour */
-            transform: translateY(13%) !important; /* comes from the graphic designer */
+            /*transform: translateY(13%) !important;*/ /* comes from the graphic designer */
         }
 
         svg.header-background {
@@ -138,13 +139,13 @@ There is a problem with SVG https://stackoverflow.com/questions/43180480/inline-
         }
 
         @media (min-width: @mobile-width) {
-            height: 100vh- @lg-half-triangle-height;
-            min-height: 32em;
+            /*height: 100vh- @lg-half-triangle-height;
+            min-height: 32em;*/
 
             .header-inner {
-                position: absolute;
+                /*position: absolute;*/
                 width: 100%;
-                bottom: 0;
+                /*bottom: 0;*/
                 background: none;
 
                 .tpl-countdown {
@@ -169,7 +170,7 @@ There is a problem with SVG https://stackoverflow.com/questions/43180480/inline-
         }
 
         @media (min-width: @tablet-width) {
-            min-height: 40em;
+            /*min-height: 40em;*/
             .header-inner {
                 h1 {
                     font-size: 2.5em;
@@ -177,7 +178,7 @@ There is a problem with SVG https://stackoverflow.com/questions/43180480/inline-
                 .tpl-countdown {
                     max-width: 76rem;
                     .time {
-                        font-size: 8em;
+                        font-size: 6em;
                     }
                     .note {
                         font-size: 2.5em;
@@ -185,7 +186,7 @@ There is a problem with SVG https://stackoverflow.com/questions/43180480/inline-
                 }
 
                 .btn {
-                    font-size: 2em;
+                    font-size: 1.5em;
                     margin: 1em;
                 }
             }
